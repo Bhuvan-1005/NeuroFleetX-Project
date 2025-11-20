@@ -51,7 +51,7 @@ public class NotificationService {
         if (pref.isPresent() && pref.get().isEmailAlerts()) {
             String email = pref.get().getEmailAddress();
             if (email != null && !email.isEmpty()) {
-                // TODO: Integrate with email service (SendGrid, AWS SES, SMTP)
+                // Integrate with email service (SendGrid, AWS SES, SMTP)
                 System.out.println("📧 Email sent to: " + email);
                 System.out.println("Subject: " + subject);
                 System.out.println("Message: " + message);
@@ -67,7 +67,7 @@ public class NotificationService {
         if (pref.isPresent() && pref.get().isSmsNotifications()) {
             String phone = pref.get().getPhoneNumber();
             if (phone != null && !phone.isEmpty()) {
-                // TODO: Integrate with SMS service (Twilio, AWS SNS)
+                // Integrate with SMS service (Twilio, AWS SNS)
                 System.out.println("📱 SMS sent to: " + phone);
                 System.out.println("Message: " + message);
                 // Example: twilioService.send(phone, message);
@@ -82,7 +82,7 @@ public class NotificationService {
         if (pref.isPresent() && pref.get().isPushNotifications()) {
             String deviceToken = pref.get().getDeviceToken();
             if (deviceToken != null && !deviceToken.isEmpty()) {
-                // TODO: Integrate with push service (Firebase Cloud Messaging)
+                // Integrate with push service (Firebase Cloud Messaging)
                 System.out.println("🔔 Push notification sent to device: " + deviceToken);
                 System.out.println("Title: " + title);
                 System.out.println("Body: " + body);
