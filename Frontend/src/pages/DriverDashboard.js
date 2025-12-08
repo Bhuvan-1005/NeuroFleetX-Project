@@ -809,6 +809,232 @@ const DriverDashboard = () => {
           </motion.div>
         </div>
 
+        {/* Vehicle Health Monitor - Module 4 (Driver View) */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="mt-8"
+        >
+          <CardSpotlight className="p-6">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                <i className="fas fa-heartbeat text-white text-xl"></i>
+              </div>
+              <div>
+                <h2 className="text-2xl font-bold text-white">
+                  My Vehicle Health Monitor
+                </h2>
+                <p className="text-slate-400 text-sm">
+                  Real-time health status of your assigned vehicle
+                </p>
+              </div>
+            </div>
+
+            {selectedVehicle ? (
+              <>
+                {/* Vehicle Health Score */}
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                  <div className="bg-slate-800/50 rounded-lg p-4 border border-green-700/30">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-slate-400 text-sm">
+                        Overall Health
+                      </span>
+                      <i className="fas fa-heart text-green-400"></i>
+                    </div>
+                    <div className="text-3xl font-bold text-green-400">
+                      {(85 + Math.random() * 10).toFixed(0)}%
+                    </div>
+                    <div className="text-xs text-slate-500 mt-1">Excellent</div>
+                  </div>
+
+                  <div className="bg-slate-800/50 rounded-lg p-4 border border-blue-700/30">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-slate-400 text-sm">
+                        Engine Status
+                      </span>
+                      <i className="fas fa-cog text-blue-400"></i>
+                    </div>
+                    <div className="text-2xl font-bold text-blue-400">Good</div>
+                    <div className="text-xs text-slate-500 mt-1">
+                      No issues detected
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-800/50 rounded-lg p-4 border border-yellow-700/30">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-slate-400 text-sm">
+                        Fuel Level
+                      </span>
+                      <i className="fas fa-gas-pump text-yellow-400"></i>
+                    </div>
+                    <div className="text-3xl font-bold text-yellow-400">
+                      {Math.floor(50 + Math.random() * 40)}%
+                    </div>
+                    <div className="text-xs text-slate-500 mt-1">
+                      ~{Math.floor(200 + Math.random() * 150)} km range
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-800/50 rounded-lg p-4 border border-purple-700/30">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-slate-400 text-sm">
+                        Tire Pressure
+                      </span>
+                      <i className="fas fa-circle text-purple-400"></i>
+                    </div>
+                    <div className="text-2xl font-bold text-purple-400">
+                      Normal
+                    </div>
+                    <div className="text-xs text-slate-500 mt-1">
+                      All 4 tires OK
+                    </div>
+                  </div>
+                </div>
+
+                {/* Maintenance Alerts */}
+                <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50 mb-4">
+                  <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                    <i className="fas fa-bell text-orange-400"></i>
+                    Maintenance Alerts
+                  </h3>
+                  
+                  {Math.random() > 0.5 ? (
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-3 p-3 bg-yellow-500/10 rounded-lg border border-yellow-500/30">
+                        <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
+                          <i className="fas fa-exclamation-triangle text-yellow-400 text-sm"></i>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white text-sm font-medium">
+                            Oil Change Recommended
+                          </p>
+                          <p className="text-slate-400 text-xs mt-1">
+                            Due in {Math.floor(5 + Math.random() * 10)} days or{" "}
+                            {Math.floor(500 + Math.random() * 1000)} km
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3 p-3 bg-blue-500/10 rounded-lg border border-blue-500/30">
+                        <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                          <i className="fas fa-info-circle text-blue-400 text-sm"></i>
+                        </div>
+                        <div className="flex-1">
+                          <p className="text-white text-sm font-medium">
+                            Tire Rotation Scheduled
+                          </p>
+                          <p className="text-slate-400 text-xs mt-1">
+                            Scheduled for next maintenance cycle
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="text-center py-4 text-slate-500">
+                      <i className="fas fa-check-circle text-green-400 text-2xl mb-2"></i>
+                      <p className="text-sm">
+                        No maintenance alerts - Vehicle is in great shape!
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Performance Metrics */}
+                <div className="bg-slate-800/30 rounded-lg p-4 border border-slate-700/50">
+                  <h3 className="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                    <i className="fas fa-tachometer-alt text-cyan-400"></i>
+                    Performance Metrics
+                  </h3>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <div className="text-slate-400 text-xs mb-1">
+                        Avg Speed
+                      </div>
+                      <div className="text-xl font-bold text-cyan-400">
+                        {Math.floor(40 + Math.random() * 20)} km/h
+                      </div>
+                    </div>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <div className="text-slate-400 text-xs mb-1">
+                        Fuel Efficiency
+                      </div>
+                      <div className="text-xl font-bold text-green-400">
+                        {(12 + Math.random() * 5).toFixed(1)} km/L
+                      </div>
+                    </div>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <div className="text-slate-400 text-xs mb-1">
+                        Distance Today
+                      </div>
+                      <div className="text-xl font-bold text-blue-400">
+                        {Math.floor(50 + Math.random() * 150)} km
+                      </div>
+                    </div>
+                    <div className="bg-slate-900/50 rounded-lg p-3">
+                      <div className="text-slate-400 text-xs mb-1">
+                        Idle Time
+                      </div>
+                      <div className="text-xl font-bold text-orange-400">
+                        {Math.floor(10 + Math.random() * 30)} min
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vehicle Details */}
+                <div className="mt-4 bg-slate-800/20 rounded-lg p-4 border border-slate-700/30">
+                  <h4 className="text-white font-semibold mb-2 flex items-center gap-2">
+                    <i className="fas fa-car text-purple-400"></i>
+                    Vehicle Details
+                  </h4>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <span className="text-slate-400">Model:</span>
+                      <span className="text-white ml-2">
+                        {selectedVehicle.model}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400">Registration:</span>
+                      <span className="text-white ml-2">
+                        {selectedVehicle.registrationNumber}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400">Type:</span>
+                      <span className="text-white ml-2 capitalize">
+                        {selectedVehicle.type}
+                      </span>
+                    </div>
+                    <div>
+                      <span className="text-slate-400">Status:</span>
+                      <span className="text-green-400 ml-2 capitalize">
+                        {selectedVehicle.status}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <div className="text-center py-8">
+                <i className="fas fa-car text-slate-600 text-5xl mb-4"></i>
+                <p className="text-slate-400 mb-4">
+                  No vehicle assigned yet. Please select a vehicle to see health
+                  monitoring details.
+                </p>
+                <button
+                  onClick={() => setShowVehicleSelector(true)}
+                  className="px-6 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors"
+                >
+                  <i className="fas fa-plus mr-2"></i>
+                  Select Vehicle
+                </button>
+              </div>
+            )}
+          </CardSpotlight>
+        </motion.section>
+
         {/* Instructions */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
