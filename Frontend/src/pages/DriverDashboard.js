@@ -843,7 +843,7 @@ const DriverDashboard = () => {
                       <i className="fas fa-heart text-green-400"></i>
                     </div>
                     <div className="text-3xl font-bold text-green-400">
-                      {(85 + Math.random() * 10).toFixed(0)}%
+                      91%
                     </div>
                     <div className="text-xs text-slate-500 mt-1">Excellent</div>
                   </div>
@@ -869,10 +869,10 @@ const DriverDashboard = () => {
                       <i className="fas fa-gas-pump text-yellow-400"></i>
                     </div>
                     <div className="text-3xl font-bold text-yellow-400">
-                      {Math.floor(50 + Math.random() * 40)}%
+                      {Math.floor(50 + 35)}%
                     </div>
                     <div className="text-xs text-slate-500 mt-1">
-                      ~{Math.floor(200 + Math.random() * 150)} km range
+                      ~{Math.floor(200 + 120)} km range
                     </div>
                   </div>
 
@@ -899,7 +899,7 @@ const DriverDashboard = () => {
                     Maintenance Alerts
                   </h3>
                   
-                  {Math.random() > 0.5 ? (
+                  {true ? (
                     <div className="space-y-2">
                       <div className="flex items-start gap-3 p-3 bg-yellow-500/10 rounded-lg border border-yellow-500/30">
                         <div className="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
@@ -910,8 +910,8 @@ const DriverDashboard = () => {
                             Oil Change Recommended
                           </p>
                           <p className="text-slate-400 text-xs mt-1">
-                            Due in {Math.floor(5 + Math.random() * 10)} days or{" "}
-                            {Math.floor(500 + Math.random() * 1000)} km
+                            Due in {Math.floor(5 + 8)} days or{" "}
+                            {Math.floor(500 + 850)} km
                           </p>
                         </div>
                       </div>
@@ -952,7 +952,7 @@ const DriverDashboard = () => {
                         Avg Speed
                       </div>
                       <div className="text-xl font-bold text-cyan-400">
-                        {Math.floor(40 + Math.random() * 20)} km/h
+                        {Math.floor(40 + 15)} km/h
                       </div>
                     </div>
                     <div className="bg-slate-900/50 rounded-lg p-3">
@@ -960,7 +960,7 @@ const DriverDashboard = () => {
                         Fuel Efficiency
                       </div>
                       <div className="text-xl font-bold text-green-400">
-                        {(12 + Math.random() * 5).toFixed(1)} km/L
+                        {(12 + 3.8).toFixed(1)} km/L
                       </div>
                     </div>
                     <div className="bg-slate-900/50 rounded-lg p-3">
@@ -968,7 +968,7 @@ const DriverDashboard = () => {
                         Distance Today
                       </div>
                       <div className="text-xl font-bold text-blue-400">
-                        {Math.floor(50 + Math.random() * 150)} km
+                        {Math.floor(50 + 95)} km
                       </div>
                     </div>
                     <div className="bg-slate-900/50 rounded-lg p-3">
@@ -976,7 +976,7 @@ const DriverDashboard = () => {
                         Idle Time
                       </div>
                       <div className="text-xl font-bold text-orange-400">
-                        {Math.floor(10 + Math.random() * 30)} min
+                        {Math.floor(10 + 22)} min
                       </div>
                     </div>
                   </div>

@@ -574,7 +574,7 @@ const FleetDashboard = () => {
                   <i className="fas fa-gas-pump text-yellow-400"></i>
                 </div>
                 <div className="text-3xl font-bold text-yellow-400">
-                  {(15.2 + Math.random() * 2).toFixed(1)} km/L
+                  16.4 km/L
                 </div>
                 <div className="text-xs text-slate-500 mt-1">
                   Average fleet consumption
@@ -607,7 +607,7 @@ const FleetDashboard = () => {
                         </p>
                         <p className="text-slate-400 text-xs mt-1">
                           AI suggests grouping with nearby routes to save{" "}
-                          {Math.round(15 + Math.random() * 15)}% fuel
+                          22% fuel
                         </p>
                       </div>
                       <button className="px-3 py-1 bg-cyan-600 hover:bg-cyan-700 text-white text-xs rounded-lg transition-colors">
@@ -747,7 +747,7 @@ const FleetDashboard = () => {
                   <i className="fas fa-heart text-blue-400"></i>
                 </div>
                 <div className="text-3xl font-bold text-blue-400">
-                  {(85 + Math.random() * 10).toFixed(0)}%
+                  91%
                 </div>
                 <div className="text-xs text-slate-500 mt-1">Fleet average</div>
               </div>
@@ -806,7 +806,7 @@ const FleetDashboard = () => {
                           <i className="fas fa-clock mr-1"></i>
                           Predicted maintenance in {daysUntil} days •{" "}
                           {idx % 2 === 0 ? "Oil change" : "Brake inspection"} •{" "}
-                          {(Math.random() * 5000 + 1000).toFixed(0)} km
+                          {3500 + idx * 800} km
                         </p>
                       </div>
                       <button className="px-3 py-1.5 bg-orange-600 hover:bg-orange-700 text-white text-xs rounded-lg transition-colors">
@@ -836,7 +836,7 @@ const FleetDashboard = () => {
                       </p>
                       <p className="text-slate-400 text-xs mt-1">
                         Preventive maintenance can save ₹
-                        {(Math.random() * 50000 + 20000).toFixed(0)} this month
+                        45000 this month
                       </p>
                     </div>
                   </div>
@@ -853,7 +853,7 @@ const FleetDashboard = () => {
                       </p>
                       <p className="text-slate-400 text-xs mt-1">
                         Predictive maintenance reduces downtime by{" "}
-                        {Math.round(35 + Math.random() * 10)}%
+                        40%
                       </p>
                     </div>
                   </div>
@@ -870,7 +870,7 @@ const FleetDashboard = () => {
                       </p>
                       <p className="text-slate-400 text-xs mt-1">
                         Fleet safety improved by{" "}
-                        {Math.round(20 + Math.random() * 15)}% with proactive
+                        28% with proactive
                         maintenance
                       </p>
                     </div>
